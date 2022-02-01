@@ -26,3 +26,4 @@ class ProductPage(BasePage):
         price_message = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text
         actual_price = self.browser.find_element(*ProductPageLocators.ACTUAL_PRICE).text
         assert price_message == actual_price, 'The price is wrong'
+
