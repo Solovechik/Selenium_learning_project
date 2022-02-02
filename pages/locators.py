@@ -2,10 +2,13 @@ from selenium.webdriver.common.by import By
 
 
 class BasePageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
+    BASKET_LINK = (By.XPATH, '//a[text()="View basket"]')
 
 
-# class MainPageLocators:
+class BasketPageLocators:
+    EMTPY_BSK_MSG = (By.CSS_SELECTOR, '#content_inner p')
+    CHECKOUT_BUTTON = (By.XPATH, "//a[text()='Proceed to checkout']")
 
 
 class LoginPageLocators:
