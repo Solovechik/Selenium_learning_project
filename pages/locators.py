@@ -1,8 +1,11 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators:
+class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+
+
+# class MainPageLocators:
 
 
 class LoginPageLocators:
@@ -16,4 +19,5 @@ class ProductPageLocators:
     ACTUAL_PRICE = (By.CSS_SELECTOR, '#messages div:nth-child(3) div strong')
     ADD_BOOK_MESSAGE = (By.CSS_SELECTOR, '#messages div div strong')
     BOOK_TITLE = (By.CSS_SELECTOR, '.product_main h1')
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, '#messages div div')
 

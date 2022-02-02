@@ -10,9 +10,6 @@ class ProductPage(BasePage):
         self.title_message_correct()
         self.price_message_correct()
 
-    def should_be_add_button(self):
-        assert self.is_element_present(*ProductPageLocators.ADD_BUTTON), 'There is no login button'
-
     def push_add_button(self):
         add_button = self.browser.find_element(*ProductPageLocators.ADD_BUTTON)
         add_button.click()
@@ -26,4 +23,14 @@ class ProductPage(BasePage):
         price_message = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text
         actual_price = self.browser.find_element(*ProductPageLocators.ACTUAL_PRICE).text
         assert price_message == actual_price, 'The price is wrong'
+
+    def should_be_add_button(self):
+        assert self.is_element_present(*ProductPageLocators.ADD_BUTTON), 'There is no login button'
+
+    def should_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message didn't disappear"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented"
+
 
